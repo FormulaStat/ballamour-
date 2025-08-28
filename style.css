@@ -1,175 +1,134 @@
-/* Global Styles */
-body {
+/* General Reset */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
-  background: #f9f9f9;
-  color: #333;
+}
+
+body {
+  background: #0b0f1a;
+  color: #e0e0e0;
   line-height: 1.6;
 }
 
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
-}
-
-/* Navbar */
-.navbar {
-  background: #111;
-  color: #fff;
-  padding: 1rem 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-weight: 700;
-  font-size: 1.5rem;
-  color: #f9c80e;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-}
-
-.nav-links li a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-.nav-links li a:hover {
-  color: #f9c80e;
-}
-
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  color: #fff;
-}
-
-/* Hero */
-.hero {
-  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-  color: #fff;
+/* Hero Section */
+#hero {
   text-align: center;
-  padding: 6rem 2rem;
+  padding: 100px 20px;
+  background: linear-gradient(to right, #0b0f1a, #1a2235);
+  color: white;
 }
 
-.hero h1 {
+#hero h1 {
   font-size: 3rem;
+  color: #d4af37;
+  margin-bottom: 10px;
 }
 
-.hero p {
-  margin: 1rem 0;
+#hero p {
   font-size: 1.2rem;
+  margin-bottom: 20px;
 }
 
 .btn {
   display: inline-block;
-  background: #f9c80e;
-  color: #111;
-  padding: 0.8rem 1.5rem;
-  border-radius: 8px;
-  font-weight: 600;
+  background: #d4af37;
+  color: #0b0f1a;
+  padding: 12px 30px;
+  border-radius: 30px;
   text-decoration: none;
-  transition: background 0.3s;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
 .btn:hover {
-  background: #ffb703;
+  background: #b9972b;
+  color: white;
 }
 
-/* Services */
-.services {
-  padding: 4rem 0;
-  text-align: center;
-}
-
-.service-grid {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  margin-top: 2rem;
-}
-
-.service-card {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
-}
-
-.service-card:hover {
-  transform: translateY(-10px);
-}
-
-/* About */
-.about {
-  padding: 4rem 0;
-  text-align: center;
-}
-
-/* Contact */
-.contact {
-  padding: 4rem 0;
-  text-align: center;
-}
-
-.contact form {
-  display: grid;
-  gap: 1rem;
-  max-width: 500px;
+/* Sections */
+section {
+  padding: 60px 20px;
+  max-width: 1000px;
   margin: auto;
 }
 
-.contact input, .contact textarea {
-  width: 100%;
-  padding: 1rem;
-  border: 1px solid #ccc;
+h2 {
+  font-size: 2rem;
+  color: #d4af37;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+p, li {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+/* Investment Plans */
+#plans {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.plan {
+  background: #1a2235;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #2c3654;
+  transition: 0.3s;
+}
+
+.plan h3 {
+  color: #d4af37;
+  margin-bottom: 10px;
+}
+
+.plan:hover {
+  transform: translateY(-5px);
+  border-color: #d4af37;
+}
+
+/* Contact Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input, textarea, button {
+  padding: 12px;
+  border: none;
   border-radius: 8px;
+  font-size: 1rem;
+}
+
+input, textarea {
+  background: #1a2235;
+  color: white;
+}
+
+button {
+  background: #d4af37;
+  color: #0b0f1a;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #b9972b;
+  color: white;
 }
 
 /* Footer */
-.footer {
-  background: #111;
-  color: #fff;
+footer {
   text-align: center;
-  padding: 1rem 0;
-  margin-top: 2rem;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background: #111;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 200px;
-    padding: 1rem;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
+  padding: 20px;
+  background: #0b0f1a;
+  font-size: 0.9rem;
+  color: #aaa;
+  border-top: 1px solid #1a2235;
 }
