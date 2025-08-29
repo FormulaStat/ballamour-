@@ -79,3 +79,14 @@ const revealObserver = new IntersectionObserver((entries, observer) => {
 }, { threshold: 0.15 });
 
 revealElements.forEach(el => revealObserver.observe(el));
+
+
+// Hero parallax background
+const parallaxLayer = document.querySelector(".parallax-layer");
+
+window.addEventListener("scroll", () => {
+  let offset = window.scrollY * 0.2;
+  if (parallaxLayer) {
+    parallaxLayer.style.transform = `translateY(${offset}px)`;
+  }
+});
