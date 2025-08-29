@@ -53,3 +53,14 @@ form.addEventListener("submit", (e) => {
   alert("Thank you for contacting Crestpoint Capital. We’ll get back to you shortly!");
   form.reset();
 });
+
+
+// Parallax effect for hero text
+const heroContent = document.querySelector(".hero-content");
+
+window.addEventListener("scroll", () => {
+  let scrollY = window.scrollY;
+  if (scrollY < window.innerHeight) {
+    heroContent.style.transform = `translateY(${scrollY * 0.3}px)`;
+  }
+});
