@@ -344,3 +344,21 @@ footer {
     padding: 60px 5%;
   }
 }
+
+/* Parallax Floating Gold Particles */
+.parallax-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,215,0,0.15) 1px, transparent 1px);
+  background-size: 100px 100px;
+  animation: floatParticles 30s linear infinite;
+  z-index: -1;
+}
+
+@keyframes floatParticles {
+  from { transform: translate(0,0); }
+  to   { transform: translate(-200px,-200px); }
+}
