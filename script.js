@@ -57,3 +57,14 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+
+
+// Ensure your HTML has these IDs:
+// <div id="menu-toggle">☰</div>
+// <ul id="nav-links"></ul>
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
