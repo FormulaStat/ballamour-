@@ -1,159 +1,262 @@
-/* =======================
+/* ---------------------------
    Global Styles
-======================= */
+---------------------------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  background: #0e0e0e;
+  color: #eaeaea;
   line-height: 1.6;
-  background-color: #f9fafc;
-  color: #1c1c1e;
 }
 
-/* Colors */
-:root {
-  --primary: #0b1d39;   /* deep navy */
-  --secondary: #d4af37; /* gold */
-  --light: #ffffff;
-  --dark: #0a0a0a;
+h1, h2, h3 {
+  font-weight: 700;
+  color: #f5f5f5;
 }
 
-/* =======================
-   Navbar
-======================= */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(11, 29, 57, 0.95);
-  backdrop-filter: blur(6px);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+p {
+  font-size: 1rem;
+  color: #cfcfcf;
 }
 
-.navbar {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
+section {
+  padding: 80px 10%;
 }
 
-.navbar img {
-  height: 45px;
-}
-
-.nav-links {
-  display: flex;
-  gap: 2rem;
-}
-
-.nav-links a {
+a {
   text-decoration: none;
-  color: var(--light);
-  font-weight: 500;
   transition: 0.3s ease;
 }
 
-.nav-links a:hover {
-  color: var(--secondary);
+/* ---------------------------
+   Navbar
+---------------------------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  background: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
 
-/* Sign Up CTA */
-.nav-links .signup-btn {
-  background: linear-gradient(135deg, #d4af37, #f6d365);
-  padding: 0.5rem 1rem;
-  border-radius: 25px;
-  color: #0b1d39 !important;
-  font-weight: 600;
-  transition: all 0.3s ease-in-out;
+.navbar .logo img {
+  height: 50px;
 }
 
-.nav-links .signup-btn:hover {
-  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
 }
 
-/* Mobile Menu */
+.nav-links li a {
+  color: #fff;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #ffd700, #ffae00);
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+.btn, .btn-outline {
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+.btn {
+  background: linear-gradient(90deg, #ffd700, #ffae00);
+  color: #000;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn-outline {
+  border: 2px solid #ffd700;
+  color: #ffd700;
+}
+
+.btn-outline:hover {
+  background: #ffd700;
+  color: #000;
+}
+
 .menu-toggle {
   display: none;
-  flex-direction: column;
+  font-size: 28px;
   cursor: pointer;
-  gap: 5px;
+  color: #fff;
 }
 
-.menu-toggle span {
-  height: 3px;
-  width: 25px;
-  background: var(--light);
-  border-radius: 5px;
-  transition: 0.3s;
-}
-
-/* =======================
+/* ---------------------------
    Hero Section
-======================= */
-.hero {
-  background: linear-gradient(rgba(11, 29, 57, 0.8), rgba(11, 29, 57, 0.8)), url("image/finance-bg.jpg") no-repeat center center/cover;
-  color: white;
+---------------------------- */
+#hero {
+  height: 100vh;
+  background: url("image/hero-bg.jpg") center/cover no-repeat fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 8rem 2rem;
 }
 
-.hero h1 {
-  font-size: 2.8rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
+#hero h1 {
+  font-size: 3rem;
+  color: #ffd700;
+  margin-bottom: 10px;
 }
 
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  max-width: 650px;
-  margin-left: auto;
-  margin-right: auto;
+#hero p {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  color: #f5f5f5;
 }
 
-.hero .cta-btn {
-  background: linear-gradient(135deg, #d4af37, #f6d365);
-  padding: 0.8rem 2rem;
-  border-radius: 30px;
-  color: #0b1d39;
+/* ---------------------------
+   Sections
+---------------------------- */
+#about, #services, #plans, #how, #why, #cta, #contact {
+  background: #141414;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+  animation: fadeInUp 1s ease both;
+}
+
+#services ul, #why ul {
+  list-style: none;
+}
+
+#services li, #why li {
+  padding: 10px 0;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+/* ---------------------------
+   Plans
+---------------------------- */
+.plan {
+  background: #1c1c1c;
+  padding: 30px;
+  border-radius: 12px;
+  margin: 20px 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plan:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(255,215,0,0.3);
+}
+
+/* ---------------------------
+   Contact
+---------------------------- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, textarea, button {
+  padding: 15px;
+  border-radius: 8px;
+  border: none;
   font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
+}
+
+input, textarea {
+  background: #2a2a2a;
+  color: #fff;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #888;
+}
+
+button {
+  background: linear-gradient(90deg, #ffd700, #ffae00);
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
   transition: 0.3s;
 }
 
-.hero .cta-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(212, 175, 55, 0.5);
+button:hover {
+  opacity: 0.9;
 }
 
-/* =======================
+/* ---------------------------
+   Footer
+---------------------------- */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #000;
+  color: #999;
+  font-size: 0.9rem;
+}
+
+/* ---------------------------
+   Animations
+---------------------------- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------------------------
    Responsive
-======================= */
+---------------------------- */
 @media (max-width: 768px) {
   .nav-links {
+    display: none;
+    flex-direction: column;
     position: absolute;
     top: 70px;
-    right: 0;
-    background: var(--primary);
-    flex-direction: column;
-    width: 220px;
-    padding: 1rem;
-    display: none;
-    border-radius: 0 0 0 12px;
+    right: 10%;
+    background: #111;
+    width: 200px;
+    padding: 20px;
+    border-radius: 8px;
   }
-
-  .nav-links.active {
+  .nav-links.show {
     display: flex;
   }
-
   .menu-toggle {
-    display: flex;
+    display: block;
+  }
+  section {
+    padding: 60px 5%;
   }
 }
