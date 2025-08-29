@@ -306,6 +306,19 @@ footer {
   }
 }
 
+/* Scroll Reveal Initial State */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Active when visible */
+.reveal-on-scroll.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* ---------------------------
    Responsive
 ---------------------------- */
