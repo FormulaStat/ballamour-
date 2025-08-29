@@ -64,3 +64,18 @@ window.addEventListener("scroll", () => {
     heroContent.style.transform = `translateY(${scrollY * 0.3}px)`;
   }
 });
+
+
+// Scroll-based reveal animations
+const revealElements = document.querySelectorAll(".reveal-on-scroll");
+
+const revealObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("active");
+      observer.unobserve(entry.target); // animate once
+    }
+  });
+}, { threshold: 0.15 });
+
+revealElements.forEach(el => revealObserver.observe(el));
