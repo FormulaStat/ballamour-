@@ -112,6 +112,34 @@ a {
   color: #fff;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.company-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffd700;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.logo:hover .company-name {
+  color: #ffae00;
+}
+
 /* ---------------------------
    Hero Section
 ---------------------------- */
