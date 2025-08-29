@@ -115,17 +115,11 @@ a {
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
-}
-
-.logo a {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
 }
 
 .logo img {
   height: 50px;
+  margin-right: 12px; /* Adds clean space between logo & text */
 }
 
 .company-name {
