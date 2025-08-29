@@ -1,15 +1,30 @@
-// Mobile nav toggle
+// ============================
+// Mobile Navigation Toggle
+// ============================
 const menuToggle = document.getElementById("menu-toggle");
-const navLinks = document.getElementById("nav-links");
+const navLinksContainer = document.getElementById("nav-links");
 
-menuToggle.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
-});
+if (menuToggle && navLinksContainer) {
+  menuToggle.addEventListener("click", () => {
+    navLinksContainer.classList.toggle("active");
+  });
 
+  // Close nav when a link is clicked (mobile UX)
+  navLinksContainer.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinksContainer.classList.remove("active");
+    });
+  });
+}
+
+// ============================
 // Parallax Particles
+// ============================
 const parallaxLayer = document.querySelector(".parallax-layer");
 
 function createParticles(count) {
+  if (!parallaxLayer) return; // Prevent errors if no layer exists
+
   for (let i = 0; i < count; i++) {
     const particle = document.createElement("div");
     particle.classList.add("particle");
@@ -23,27 +38,31 @@ function createParticles(count) {
   }
 }
 
-createParticles(25); // number of particles
+createParticles(25); // Number of floating particles
 
-
+// ============================
 // Navbar Scroll Effect
-const navbar = document.querySelector('.navbar');
-window.addEventListener('scroll', () => {
+// ============================
+const navbar = document.querySelector(".navbar");
+
+window.addEventListener("scroll", () => {
   if (window.scrollY > 50) {
-    navbar.classList.add('scrolled');
+    navbar.classList.add("scrolled");
   } else {
-    navbar.classList.remove('scrolled');
+    navbar.classList.remove("scrolled");
   }
 });
 
+// ============================
 // ScrollSpy Active Link
+// ============================
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll(".nav-links li a");
 
 window.addEventListener("scroll", () => {
   let current = "";
   sections.forEach(section => {
-    const sectionTop = section.offsetTop - 100;
+    const sectionTop = section.offsetTop - 120;
     const sectionHeight = section.clientHeight;
     if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
       current = section.getAttribute("id");
@@ -56,15 +75,4 @@ window.addEventListener("scroll", () => {
       link.classList.add("active");
     }
   });
-});
-
-
-// Ensure your HTML has these IDs:
-// <div id="menu-toggle">☰</div>
-// <ul id="nav-links"></ul>
-const menuToggle = document.getElementById("menu-toggle");
-const navLinks = document.getElementById("nav-links");
-
-menuToggle.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
 });
